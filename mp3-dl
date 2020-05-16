@@ -1,0 +1,10 @@
+#! /bin/bash
+
+if [ "$1" == "" ]; then
+    echo "Link do vídeo:"
+    read LINK
+    youtube-dl -f best --no-cache-dir -i --audio-format mp3 --extract-audio --audio-quality 0 $LINK
+else
+    echo $1
+    youtube-dl -f best --no-cache-dir -i --audio-format mp3 --extract-audio --audio-quality 0 $1
+fi
